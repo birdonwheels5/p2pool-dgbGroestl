@@ -22,8 +22,8 @@ nets = dict(
 	ADDRESS_VERSION=30, #pubkey_address
 	RPC_PORT=14022,
 	RPC_CHECK=defer.inlineCallbacks(lambda bitcoind: defer.returnValue(
-	    'digibyteaddress' in (yield bitcoind.rpc_help()) and
-	     not (yield bitcoind.rpc_getinfo())['testnet']
+	    'digibyteaddress' in (yield bitcoind.rpc_getinfo())['testnet'] 
+	     and not (yield bitcoind.rpc_help())
         )),
 	SUBSIDY_FUNC=lambda height: __import__('digibyte_subsidy').GetBlockBaseValue(height),
 	POW_FUNC=data.hash256,
