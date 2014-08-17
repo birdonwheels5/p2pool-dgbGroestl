@@ -40,7 +40,7 @@ nets = dict(
     digibyteSha_testnet=math.Object(
         P2P_PREFIX='fcc1b7dc'.decode('hex'), #pchmessagestart
 	P2P_PORT=12025,
-	ADDRESS_VERSION=30, #pubkey_address
+	ADDRESS_VERSION=111, #pubkey_address
 	RPC_PORT=14023,
 	RPC_CHECK=defer.inlineCallbacks(lambda bitcoind: defer.returnValue(
 	    'digibyteaddress' in (yield bitcoind.rpc_help()) and
