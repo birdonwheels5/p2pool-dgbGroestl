@@ -35,7 +35,7 @@ nets = dict(
 	TX_EXPLORER_URL_PREFIX='http://altexplorer.net/tx/',
 	SANE_TARGET_RANGE=(2**256//2**32//1000 - 1, 2**256//2**27 - 1),
 	DUMB_SCRYPT_DIFF=1,
-	DUST_THRESHOLD=0.0001e8,
+	DUST_THRESHOLD=0.001e8,
     ),
     digibyteGroestl_testnet=math.Object(
         P2P_PREFIX='fcc1b7dc'.decode('hex'), #pchmessagestart
@@ -55,7 +55,7 @@ nets = dict(
 	TX_EXPLORER_URL_PREFIX='http://altexplorer.net/tx/',
 	SANE_TARGET_RANGE=(2**256//2**32//1000 - 1, 2**256//2**27 - 1),
 	DUMB_SCRYPT_DIFF=1,
-	DUST_THRESHOLD=0.0001e8,
+	DUST_THRESHOLD=0.001e8,
     ),
 
 )
