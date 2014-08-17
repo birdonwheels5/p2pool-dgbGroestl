@@ -26,8 +26,8 @@ nets = dict(
         ANNOUNCE_CHANNEL='#p2pool-alt',
         VERSION_CHECK=lambda v: True,
     ),
-    digibyteSha_testnet=math.Object(
-        PARENT=networks.nets['digibyteSha_testnet'],
+    digibyteShatest=math.Object(
+        PARENT=networks.nets['digibyteShatest'],
         SHARE_PERIOD=15, # seconds target spacing
         CHAIN_LENGTH=12*60*60//10, # shares
         REAL_CHAIN_LENGTH=12*60*60//10, # shares
