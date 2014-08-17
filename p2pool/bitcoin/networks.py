@@ -37,7 +37,7 @@ nets = dict(
 	DUMB_SCRYPT_DIFF=1,
 	DUST_THRESHOLD=0.0001e8,
     ),
-    digibyteSha_testnet=math.Object(
+    digibyteShatest=math.Object(
         P2P_PREFIX='fcc1b7dc'.decode('hex'), #pchmessagestart
 	P2P_PORT=12025,
 	ADDRESS_VERSION=111, #pubkey_address
