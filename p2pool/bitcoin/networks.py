@@ -21,7 +21,7 @@ nets = dict(
 	P2P_PORT=12024,
 	ADDRESS_VERSION=30, #pubkey_address
 	RPC_PORT=14022,
-	PC_CHECK=defer.inlineCallbacks(lambda bitcoind: defer.returnValue(
+	RPC_CHECK=defer.inlineCallbacks(lambda bitcoind: defer.returnValue(
 	    'digibyteaddress' in (yield bitcoind.rpc_help()) and
 	     not (yield bitcoind.rpc_getinfo())['testnet']
         )),
