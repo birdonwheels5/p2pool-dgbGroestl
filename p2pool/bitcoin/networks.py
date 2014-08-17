@@ -16,7 +16,7 @@ def check_genesis_block(bitcoind, genesis_block_hash):
         defer.returnValue(True)
 
 nets = dict(
-    digibyteSha=math.Object(
+    digibyteGroestl=math.Object(
         P2P_PREFIX='fac3b6da'.decode('hex'), #pchmessagestart
 	P2P_PORT=12024,
 	ADDRESS_VERSION=30, #pubkey_address
@@ -26,7 +26,7 @@ nets = dict(
 	     not (yield bitcoind.rpc_getinfo())['testnet']
         )),
 	SUBSIDY_FUNC=lambda height: __import__('digibyte_subsidy').GetBlockBaseValue(height),
-	POW_FUNC=data.hash256,
+	POW_FUNC=lambda data: pack.IntType(256).unpack(__import__('groestl_hash').getPoWHash(data)),
 	BLOCK_PERIOD=60, # s
 	SYMBOL='DGB',
 	CONF_FILE_FUNC=lambda: os.path.join(os.path.join(os.environ['APPDATA'], 'digibyte') if platform.system() == 'Windows' else os.path.expanduser('~/Library/Application Support/digibyte/') if platform.system() == 'Darwin' else os.path.expanduser('~/.digibyte'), 'digibyte.conf'),
@@ -46,7 +46,7 @@ nets = dict(
 	    'digibyteaddress' in (yield bitcoind.rpc_help())
         )),
 	SUBSIDY_FUNC=lambda height: __import__('digibyte_subsidy').GetBlockBaseValue(height),
-	POW_FUNC=data.hash256,
+	POW_FUNC=lambda data: pack.IntType(256).unpack(__import__('groestl_hash').getPoWHash(data)),
 	BLOCK_PERIOD=60, # s
 	SYMBOL='DGB',
 	CONF_FILE_FUNC=lambda: os.path.join(os.path.join(os.environ['APPDATA'], 'digibyte') if platform.system() == 'Windows' else os.path.expanduser('~/Library/Application Support/digibyte/') if platform.system() == 'Darwin' else os.path.expanduser('~/.digibyte'), 'digibyte.conf'),
