@@ -8,8 +8,8 @@ from p2pool.util import math
 # changes can be done by changing one, then the other
 
 nets = dict(
-    digibyteSha=math.Object(
-        PARENT=networks.nets['digibyteSha'],
+    digibyteGroestl=math.Object(
+        PARENT=networks.nets['digibyteGroestl'],
         SHARE_PERIOD=15, # seconds target spacing
         CHAIN_LENGTH=12*60*60//10, # shares
         REAL_CHAIN_LENGTH=12*60*60//10, # shares
@@ -17,17 +17,17 @@ nets = dict(
         SPREAD=50, # blocks
         IDENTIFIER='48a4ebc31b798115'.decode('hex'),
         PREFIX='5685a276c2dd81db'.decode('hex'),
-        P2P_PORT=15010,
+        P2P_PORT=15020,
         MIN_TARGET=0,
         MAX_TARGET=2**256//2**20 - 1,
         PERSIST=False,
-        WORKER_PORT=15011,
+        WORKER_PORT=15021,
         BOOTSTRAP_ADDRS=''.split(' '),
         ANNOUNCE_CHANNEL='#p2pool-alt',
         VERSION_CHECK=lambda v: True,
     ),
-    digibyteShatestnet=math.Object(
-        PARENT=networks.nets['digibyteSha_testnet'],
+    digibyteGroestltestnet=math.Object(
+        PARENT=networks.nets['digibyteGroestl_testnet'],
         SHARE_PERIOD=15, # seconds target spacing
         CHAIN_LENGTH=12*60*60//10, # shares
         REAL_CHAIN_LENGTH=12*60*60//10, # shares
@@ -35,11 +35,11 @@ nets = dict(
         SPREAD=50, # blocks
         IDENTIFIER='58a4ebc31b798115'.decode('hex'),
         PREFIX='6685a276c2dd81db'.decode('hex'),
-        P2P_PORT=25010,
+        P2P_PORT=25020,
         MIN_TARGET=0,
         MAX_TARGET=2**256//2**20 - 1,
         PERSIST=False,
-        WORKER_PORT=25011,
+        WORKER_PORT=25021,
         BOOTSTRAP_ADDRS=''.split(' '),
         ANNOUNCE_CHANNEL='#p2pool-alt',
         VERSION_CHECK=lambda v: True,
